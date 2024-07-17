@@ -1,0 +1,40 @@
+{% extends 'header.html' %}
+
+{% block title %}Register{% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="photo">
+                    <img src="../static/img/dl.beatsnoop 1.svg" alt="phone" class="img-fluid">
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="container mt-4">
+                    <h2>Register</h2>
+                    <form method="post" action="{{ url_for('register') }}">
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="role" class="form-label">Select your role:</label>
+                            <select id="role" name="role" class="form-select">
+                                <option value="user">User</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Register</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+{% endblock %}

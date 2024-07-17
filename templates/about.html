@@ -1,0 +1,111 @@
+{%extends 'header.html ' %}
+
+{%block content%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .our-story {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .our-story-text {
+            flex: 1;
+            padding: 20px;
+        }
+        .our-story-text h1 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        .our-story-text p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            color: #555;
+        }
+        .our-story-image {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+        .our-story-image img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+        .statistics, .services {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .stat, .service {
+            text-align: center;
+            flex: 1;
+            padding: 20px;
+        }
+        .stat h2, .service h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #e63946;
+        }
+        .stat p, .service p {
+            font-size: 1.1em;
+            color: #555;
+        }
+        .service-icon {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: #e63946;
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="our-story">
+        <div class="our-story-text">
+            <h1>Our Story</h1>
+            <p>In the heart of our digital haven, every pixel pulsates with the echoes of our dreams and the whispers of our struggles. Behind the screen lies a tale of resilience, of souls bound by a common purpose and an unwavering commitment to make a difference. Through every trial and triumph, we've forged a community—a family—where hope thrives and tears water the seeds of perseverance. We're not just a website; we're a sanctuary for broken spirits seeking solace and weary hearts yearning for connection. Join us on this journey of tears and triumphs, where every click is a testament to the human spirit's indomitable strength.</p>
+            
+        </div>
+        <div class="our-story-image">
+            <img src="https://img.freepik.com/free-photo/closeup-shot-beautiful-young-african-women-with-shopping-bags_181624-32978.jpg" alt="Our Story Image">
+        </div>
+    </div>
+    <div class="our-story-image" style="margin-top: 50px;">
+        <img src="../static/img/Frame 891.svg" alt="Our Story Image">
+    </div>
+
+    <div class="our-story-image" style="margin-top: 50px;"> 
+        <img src="../static/img/Full services.svg" alt="Our Story Image">
+    </div>
+   
+   
+</div>
+
+</body>
+</html>
+
+{% endblock%}

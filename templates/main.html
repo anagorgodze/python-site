@@ -1,0 +1,267 @@
+{% extends 'header.html' %}
+
+{% block content %}
+  <style>
+    .position-bottom-left {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+    }
+    .header-section, .explore-section {
+      position: relative;
+    }
+    .carousel-inner {
+      width: 1000px;
+      height: 500px;
+      margin: 0 auto;
+     
+    }
+    .explore-section img {
+      width: 100%;
+    }
+    .bt{
+      margin-left: 350px;
+      margin-bottom: 80px; 
+    }
+  </style>
+
+  <!-- Header Section -->
+  <section class="header-section text-center p-5">
+    <img src="../static/img/carousel1.svg" class="img-fluid" alt="Header Photo">
+    <div class="position-bottom-left">
+      <button class="btn btn-primary bt"><a href="{{url_for('products')}}" style="color: white; text-decoration: none; ">Shop Now!</a></button>
+    </div>
+  </section>
+
+  <!-- Flash Sales Section -->
+  <section class="p-5">
+    <div class="d-flex justify-content-between align-items-center mb-4 me-3">
+      <h2>Flash Sales</h2>
+      <div>
+        <button class="btn btn-outline-secondary me-2" id="flashPrev">&lt;</button>
+        <button class="btn btn-outline-secondary" id="flashNext">&gt;</button>
+      </div>
+    </div>
+    <div id="flashSalesCarousel" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <!-- Slide 1 -->
+        <div class="carousel-item active">
+          <div class="row">
+            <!-- Flash Sale Cards -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item1.svg" class="card-img-top" alt="Product 1">
+                <div class="card-body">
+                  <h5 class="card-title">keyboard</h5>
+                  <p class="card-text">$19.99</p>
+                 
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item2.svg" class="card-img-top" alt="Product 2">
+                <div class="card-body">
+                  <h5 class="card-title">HAVIT HV-G92 Gamepad</h5>
+                  <p class="card-text">$29.99</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item3.svg" class="card-img-top" alt="Product 3">
+                <div class="card-body">
+                  <h5 class="card-title">IPS LCD Gaming Monitor</h5>
+                  <p class="card-text">$310</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 2 -->
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item4.svg" class="card-img-top" alt="Product 4">
+                <div class="card-body">
+                  <h5 class="card-title">RGB liquid CPU Cooler</h5>
+                  <p class="card-text">$160</p>
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item5.png" class="card-img-top" alt="Product 5">
+                <div class="card-body">
+                  <h5 class="card-title">HAVIT HV-G92 Gamepad</h5>
+                  <p class="card-text">$59.99</p>
+                
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <img src="../static/img/item1.svg" class="card-img-top" alt="Product 6">
+                <div class="card-body">
+                  <h5 class="card-title">AK-900 Wired Keyboard</h5>
+                  <p class="card-text">$69.99</p>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Explore Our Products Section -->
+<section class="pc" style="margin-left: 150px; height: 500px; ">
+  <div class="position-relative" >
+    <img src="../static/img/carousel2.svg" class="img-fluid" alt="Explore Photo" >
+    <div class="position-bottom-left">
+      <button class="btn btn-primary " style="margin-bottom: 100px; margin-left: 50px;"><a href="{{url_for('products')}}" style="color: white; text-decoration: none; ">Shop Now!</a></button>
+    </div>
+  </div>
+</section>
+
+<section class="explore-section p-5">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h2 >Explore Our Products</h2>
+    </div>
+    <div class="col-md-4 text-end">
+      <button class="btn btn-danger"> <a href="{{url_for('products')}}" style="color: white; text-decoration: none; ">View All</a></button>
+    </div>
+  </div>
+</section>
+  <!-- Product Cards Section -->
+  <section class="p-5">
+    <div class="row mb-3">
+      <!-- Product Card -->
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item10.png" class="card-img-top" alt="Product 1">
+          <div class="card-body">
+            <h5 class="card-title">Bravo v6</h5>
+            <p class="card-text">$499</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item11.png" class="card-img-top" alt="Product 2">
+          <div class="card-body">
+            <h5 class="card-title">Alpha v6 </h5>
+            <p class="card-text">$499.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item12.png" class="card-img-top" alt="Product 3">
+          <div class="card-body">
+            <h5 class="card-title">Computer Pro</h5>
+            <p class="card-text">$599.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item13.png" class="card-img-top" alt="Product 4">
+          <div class="card-body">
+            <h5 class="card-title">Computer 16</h5>
+            <p class="card-text">$499.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item14.svg" class="card-img-top" alt="Product 5">
+          <div class="card-body">
+            <h5 class="card-title">Playstation 5</h5>
+            <p class="card-text">$599.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item15.png" class="card-img-top" alt="Product 6">
+          <div class="card-body">
+            <h5 class="card-title">Apple Computer</h5>
+            <p class="card-text">$769.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item1.svg" class="card-img-top" alt="Product 7">
+          <div class="card-body">
+            <h5 class="card-title">AK-900 Wired Keyboard</h5>
+            <p class="card-text">$79.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item2.svg" class="card-img-top" alt="Product 8">
+          <div class="card-body">
+            <h5 class="card-title">HAVIT HV-G92 Gamepad</h5>
+            <p class="card-text">$89.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item3.svg" class="card-img-top" alt="Product 9">
+          <div class="card-body">
+            <h5 class="card-title">IPS LCD Gaming Monitor</h5>
+            <p class="card-text">$99.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item15.svg" class="card-img-top" alt="Product 10">
+          <div class="card-body">
+            <h5 class="card-title">CANON EOS DSLR Camera</h5>
+            <p class="card-text">$109.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/iphone.jpg" class="card-img-top" alt="Product 11">
+          <div class="card-body">
+            <h5 class="card-title">Iphone 14</h5>
+            <p class="card-text">$999.99</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-2">
+        <div class="card">
+          <img src="../static/img/item9.png" class="card-img-top" alt="Product 12">
+          <div class="card-body">
+            <h5 class="card-title"> Gaming Laptop</h5>
+            <p class="card-text">$2129.99</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+ <script>
+    document.getElementById('flashPrev').addEventListener('click', function () {
+      let carousel = new bootstrap.Carousel(document.getElementById('flashSalesCarousel'));
+      carousel.prev();
+    });
+
+    document.getElementById('flashNext').addEventListener('click', function () {
+      let carousel = new bootstrap.Carousel(document.getElementById('flashSalesCarousel'));
+      carousel.next();
+    });
+  </script> 
+
+{% endblock %}

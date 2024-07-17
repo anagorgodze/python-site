@@ -1,0 +1,75 @@
+.container{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.image1{
+    width: 90px;
+    height: 80px;
+}
+.sch{
+    width: 250px;
+}
+.pg{
+    margin-left: 20%;
+    gap: 100px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    
+}
+.icons{
+    margin-left: 10px;
+    gap:5px;
+    
+}
+
+/* Custom CSS */
+.small-text {
+    font-size: 0.875rem; 
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#login h2 {
+    font-size: 2rem; 
+    margin-bottom: 1rem; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.contact-form {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-group {
+    margin-bottom: 15px;
+}
+
+.contact-form .form-control {
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+}
+
+.contact-form .btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.contact-form .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+}
+
+.text-center {
+    text-align: center;
+}
+

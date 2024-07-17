@@ -1,0 +1,65 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<div id="products" class="container mt-3">
+    <h2>Products</h2>
+    {% if session.is_admin %}
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addProductModal">
+        Add Product
+    </button>
+    {% endif %}
+    <div class="row">
+        {% for product in products %}
+        <div class="col-sm-4">
+            <div class="card">
+                <img src="{{ product.image }}" class="card-img-top" width="300" height="300" alt="Product Image">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.name }}</h5>
+                    <p class="card-text">${{ product.price }}</p>
+                    {% if 'user_id' in session %}
+                        {% if check_in_session(product.id, 'favorites') %}
+                            <a href="{{ url_for('remove_from_favorites', id=product.id) }}" class="btn btn-danger" data-bs-toggle="tooltip" title="Remove from Favorites" style="margin-right: 30px;">Remove from Favorites</a>
+                        {% else %}
+                            <a href="{{ url_for('add_to_favorite', id=product.id) }}" class="btn btn-primary" data-bs-toggle="tooltip" title="Add to Favorites">Add to Favorites</a>
+                        {% endif %}
+                        {% if check_in_session(product.id, 'cart') %}
+                            <a href="{{ url_for('remove_from_cart', id=product.id) }}" class="btn btn-danger" data-bs-toggle="tooltip" title="Remove from Cart">Remove from Cart</a>
+                        {% else %}
+                            <a href="{{ url_for('add_to_cart', id=product.id) }}" class="btn btn-primary" data-bs-toggle="tooltip" title="Add to Cart">Add to Cart</a>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <div class="modal fade" id="addProductModal" tabindex="-1" aria-labelledby="addProductModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addProductModalLabel">New Product</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="{{ url_for('add_products') }}" method="post" enctype="multipart/form-data">
+                        <div class="mb-3">
+                            <label for="productName" class="form-label">Product Name</label>
+                            <input type="text" name="name" class="form-control" id="productName" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productPrice" class="form-label">Price</label>
+                            <input type="number" name="price" class="form-control" id="productPrice" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="productImage" class="form-label">Upload Image</label>
+                            <input type="file" name="image" class="form-control" id="productImage" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Save Product</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

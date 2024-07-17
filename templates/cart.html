@@ -1,0 +1,62 @@
+{% extends 'header.html' %}
+
+{% block content %}
+<style>
+h1 {
+    margin-top: 0;
+}
+.cart-items {
+    list-style: none;
+    padding: 0;
+}
+.cart-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.cart-item img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+.item-details {
+    flex-grow: 1;
+}
+.total {
+    text-align: right;
+    margin-top: 20px;
+}
+.checkout-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.checkout-btn:hover {
+    background-color: #218838;
+}
+</style>
+
+<div class="container">
+    <h1>Shopping Cart</h1>
+    <ul class="cart-items">
+        {% for product in products %}
+                
+            <li class="cart-item">
+                <img src="{{ product.image }}" class="card-img-top" width="300" height="300" alt="Product Image">
+                <div class="item-details">
+                    <h2>{{ product.name }}</h2>
+                    <p>Price: ${{ product.price }}</p>
+                    <a href="{{ url_for('remove_from_cart', id=product.id) }}">Remove</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <div class="total">
+        <h2>Total Amount: ${{ total_amount }}</h2>
+        <button type="button" class="checkout-btn">Proceed to Checkout</button>
+    </div>
+</div>
+{% endblock %}
+
